@@ -38,6 +38,7 @@ namespace LoadBalancer.Tests
                })).ToArray();
 
             Task.WaitAll(producers);
+            queue.CompleteAdding();
             Task.WaitAll(consumres);
         }
     }
